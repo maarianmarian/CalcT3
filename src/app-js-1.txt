@@ -1,0 +1,33 @@
+import logo from './logo.svg';
+import logoHell from './img/logo_hell.png';
+import grupo from './img/grupo.png';
+import './App.css';
+import Bar from './components/Bar';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Bar/>
+      </header>
+
+      <body>
+      <img src={grupo} className="App-grupo" alt="logo" id='grupo' />
+      <img src={logoHell}  className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> Que pasooooo!!!!
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </body>
+    </div>
+  );
+}
+
+export default App;
