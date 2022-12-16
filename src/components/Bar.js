@@ -14,16 +14,12 @@ class Bar extends Component {
                 <tr >
                     <th className="table" >
                         <div >
-                                <ul>
-                                    <li>
                                         <div>
-                                            <button className="btn-navBar" onClick={ChangeView1}>Completo</button>
+                                            <button className="btn-navBar" onClick={ChangeView1}>Liquidación</button>
                                             <button className="btn-navBar" onClick={ChangeView2}>Vacaciones</button>
                                             <button className="btn-navBar" onClick={ChangeView3}>Aguinaldo</button>
                                             <button className="btn-navBar" onClick={ChangeView4}>Finiquito</button>
                                         </div>
-                                    </li>
-                                </ul>
                         </div>
 
                     </th>

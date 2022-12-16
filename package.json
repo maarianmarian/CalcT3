@@ -1,5 +1,6 @@
 {
   "name": "calct",
+  "homepage": "https://calc.caceh.org.mx/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
