@@ -1,12 +1,11 @@
-import dignas from '../img/dignas.jpg';
+import dignas from '../img/Dignas.jpg';
 import React, {Component} from 'react';
 
 
 class CalcT extends Component {
     fecha1 = React.createRef();
     fecha2 = React.createRef();
-    fechaResult = React.createRef();
-    fechaResult = "sin resultado";
+    fechaRes = React.createRef();
     sueldoRef = React.createRef();
 
     state = {
@@ -24,6 +23,7 @@ class CalcT extends Component {
         indemnizacion:"",
         primaAntig: "",
         diasxanio:"",
+        vacasProporcionales:"",
         granTotal: "",
     }
 
@@ -64,6 +64,7 @@ class CalcT extends Component {
         let indemnizacion = 0;
         let primaAntig = 0;
         let diasxanio = 0;
+        let vacasProporcionales = 0;
         let granTotal = 0;
 
         RestaFechas = this.dateConverter();
@@ -79,151 +80,152 @@ class CalcT extends Component {
             if (this.state.antig > 0 && this.state.antig !== undefined) {
                 vacaciones = 0;}
             if (antig === 1) {
-                vacaciones = 6;
-            }
-            if (antig === 2) {
-                vacaciones = 8;
-            }
-            if (antig === 3) {
-                vacaciones = 10;
-            }
-            if (antig === 4) {
                 vacaciones = 12;
             }
-            if (antig === 5) {
+            if (antig === 2) {
                 vacaciones = 14;
+            }
+            if (antig === 3) {
+                vacaciones = 16;
+            }
+            if (antig === 4) {
+                vacaciones = 18;
+            }
+            if (antig === 5) {
+                vacaciones = 20;
             }
             if (antig === 6) {
-                vacaciones = 14;
+                vacaciones = 22;
             }
             if (antig === 7) {
-                vacaciones = 14;
+                vacaciones = 22;
             }
             if (antig === 8) {
-                vacaciones = 14;
+                vacaciones = 22;
             }
             if (antig === 9) {
-                vacaciones = 14;
+                vacaciones = 22;
             }
             if (antig === 10) {
-                vacaciones = 16;
+                vacaciones = 22;
             }
             if (antig === 11) {
-                vacaciones = 16;
+                vacaciones = 24;
             }
             if (antig === 12) {
-                vacaciones = 16;
+                vacaciones = 24;
             }
             if (antig === 13) {
-                vacaciones = 16;
+                vacaciones = 24;
             }
             if (antig === 14) {
-                vacaciones = 16;
+                vacaciones = 24;
             }
             if (antig === 15) {
-                vacaciones = 18;
+                vacaciones = 24;
             }
             if (antig === 16) {
-                vacaciones = 18;
+                vacaciones = 26;
             }
             if (antig === 17) {
-                vacaciones = 18;
+                vacaciones = 26;
             }
             if (antig === 18) {
-                vacaciones = 18;
+                vacaciones = 26;
             }
             if (antig === 19) {
-                vacaciones = 18;
+                vacaciones = 26;
             }
             if (antig === 20) {
-                vacaciones = 20;
+                vacaciones = 26;
             }
             if (antig === 21) {
                 vacaciones = 20;
             }
             if (antig === 22) {
-                vacaciones = 20;
+                vacaciones = 28;
             }
             if (antig === 23) {
-                vacaciones = 20;
+                vacaciones = 28;
             }
             if (antig === 24) {
-                vacaciones = 20;
+                vacaciones = 28;
             }
             if (antig === 25) {
-                vacaciones = 22;
+                vacaciones = 28;
             }
             if (antig === 26) {
-                vacaciones = 22;
+                vacaciones = 30;
             }
             if (antig === 27) {
-                vacaciones = 22;
+                vacaciones = 30;
             }
             if (antig === 28) {
-                vacaciones = 22;
+                vacaciones = 30;
             }
             if (antig === 29) {
-                vacaciones = 22;
+                vacaciones = 30;
             }
             if (antig === 30) {
-                vacaciones = 24;
+                vacaciones = 30;
             }
             if (antig === 31) {
-                vacaciones = 24;
+                vacaciones = 32;
             }
             if (antig === 32) {
-                vacaciones = 24;
+                vacaciones = 32;
             }
             if (antig === 33) {
-                vacaciones = 24;
+                vacaciones = 32;
             }
             if (antig === 34) {
-                vacaciones = 24;
+                vacaciones = 32;
             }
             if (antig === 35) {
-                vacaciones = 26;
+                vacaciones = 32;
             }
             if (antig === 36) {
-                vacaciones = 26;
+                vacaciones = 32;
             }
             if (antig === 37) {
-                vacaciones = 26;
+                vacaciones = 24;
             }
             if (antig === 38) {
-                vacaciones = 26;
+                vacaciones = 34;
             }
             if (antig === 39) {
-                vacaciones = 26;
+                vacaciones = 34;
             }
             if (antig === 40) {
-                vacaciones = 28;
+                vacaciones = 36;
             }
             if (antig === 41) {
-                vacaciones = 28;
+                vacaciones = 36;
             }
             if (antig === 42) {
-                vacaciones = 28;
+                vacaciones = 36;
             }
             if (antig === 43) {
-                vacaciones = 28;
+                vacaciones = 36;
             }
             if (antig === 44) {
-                vacaciones = 28;
+                vacaciones = 36;
             }
             if (antig === 45) {
-                vacaciones = 30;
+                vacaciones = 36;
             }
             if (antig === 46) {
-                vacaciones = 30;
+                vacaciones = 38;
             }
             if (antig === 47) {
-                vacaciones = 30;
+                vacaciones = 38;
             }
             if (antig === 48) {
-                vacaciones = 30;
+
+                vacaciones = 38;
             }
             if (antig === 49) {
-                vacaciones = 30;
+                vacaciones = 38;
             }
 
             // PASO 3: calculadora
@@ -233,7 +235,9 @@ class CalcT extends Component {
             sueldoVacaciones  = (vacaciones * ((sueldoDiario)) / 4).toFixed(2);
             indemnizacion  = ((sueldoDiario) * 90).toFixed(2);
             primaAntig  = (antig * ((sueldoDiario)) * 12).toFixed(2);
-            diasxanio  = (antig * ((sueldoDiario)) / 20).toFixed(2);
+            diasxanio  = (antig * ((sueldoDiario)) * 20).toFixed(2);
+            vacasProporcionales =  (((sueldoVacaciones) * RestaFechas) / 365).toFixed(2);
+
             granTotal = (parseFloat(aguinaldo) + parseFloat(prima) + parseFloat(sueldoVacaciones) + parseFloat(indemnizacion) + parseFloat(primaAntig) + parseFloat(diasxanio)).toFixed(2);
 
 
@@ -254,6 +258,7 @@ class CalcT extends Component {
                 indemnizacion : indemnizacion,
                 primaAntig : primaAntig,
                 diasxanio : diasxanio,
+                vacasProporcionales : vacasProporcionales,
                 granTotal : granTotal,
 
             });
@@ -272,6 +277,7 @@ class CalcT extends Component {
         console.log('indemnizacion' + this.state.indemnizacion);
         console.log('primaAntig' + this.state.primaAntig);
         console.log('diasxanio' + this.state.diasxanio);
+        console.log('vacasProporcionales' + this.state.vacasProporcionales);
         console.log ('grantTotal' + this.state.granTotal);
 
     }
@@ -281,40 +287,49 @@ class CalcT extends Component {
 
             <div className="center">
 
-                <div id="sidebar" className="archivosAdminCenter3">
-                    <div>
-                        <img src={dignas}/>
-                    </div>
-                    <h1>Dignas</h1><br/>
-                    <label>Sueldo semanal</label><br/>
-                    <input type="number" ref={this.sueldoRef} onChange={this.changeState}></input><br/><br/>
-                    <label>Fecha de ingreso </label><br/>
-                    <input type="date" ref={this.fecha1} onChange={this.changeState}></input><br/><br/>
-                    <label>Fecha de salida </label><br/>
-                    <input type="date" ref={this.fecha2} onChange={this.changeState}></input><br/><br/>
-                    <button className="btn" id="btn-table" onClick={this.calcular}>Calcular</button>
-                    <br/><br/>
-                    <output>Años de antigüedad: {this.state.antig} </output>
-                    <br/> <br/>
-                    <output>Días de vacaciones: {this.state.vacaciones} </output>
-                    <br/> <br/>
-                    <output>Aguinaldo: ${this.state.aguinaldo} </output>
-                    <br/> <br/>
-                    <output>Prima Vacacional: ${this.state.prima} </output>
-                    <br/> <br/>
-                    <output>Sueldo Vacaciones: ${this.state.sueldoVacaciones} </output>
-                    <br/> <br/>
-                    <output>Indemnización: ${this.state.indemnizacion} </output>
-                    <br/> <br/>
-                    <output>Prima de antigüedad: ${this.state.primaAntig} </output>
-                    <br/> <br/>
-                    <output>Pago 20 días por Año: ${this.state.diasxanio} </output>
-                    <br/> <br/>
-                    <output>Gran Total de liquidación: ${this.state.granTotal} </output>
-                    <br/> <br/>
+              <div id="sidebar" className="archivosAdminCenter3">
+                <div>
+                  <img src={dignas} alt="logo"/>
                 </div>
+                <h1>Dignas</h1><br/>
+                <label>Sueldo semanal</label><br/>
+                <input type="number" ref={this.sueldoRef} onChange={this.changeState}></input><br/><br/>
+                <label>Fecha de ingreso </label><br/>
+                <input type="date" ref={this.fecha1} onChange={this.changeState}></input><br/><br/>
+                <label>Fecha de salida </label><br/>
+                <input type="date" ref={this.fecha2} onChange={this.changeState}></input><br/><br/>
+                <button className="btn" id="btn-table" onClick={this.calcular}>Calcular</button>
+                <br/><br/>
+                <output><b>El cálculo de las prestaciones de las personas trabajadoras del hogar, se realizará con base
+                  al
+                  salario percibido por cada una.</b>
+                </output>
+                <br/> <br/>
+                <output>Años de antigüedad: {this.state.antig} </output>
+                <br/> <br/>
+                <output>Días de vacaciones: {this.state.vacaciones} días</output>
+                <br/> <br/>
+                <output>Aguinaldo: ${this.state.aguinaldo} </output>
+                <br/> <br/>
+                <output>Vacaciones proporcionales a los días transcurridos del año:
+                  ${this.state.vacasProporcionales}</output>
+                <br/> <br/>
+                <output>Prima vacacional: ${this.state.prima} </output>
+                <br/> <br/>
+                <output>Vacaciones: ${this.state.sueldoVacaciones} </output>
+                <br/> <br/>
+                <output>Gratificación por 90 días: ${this.state.indemnizacion} </output>
+                <br/> <br/>
+                <output>Prima de antigüedad: ${this.state.primaAntig} </output>
+                <br/> <br/>
+                <output>Pago de 20 días por Año: ${this.state.diasxanio} </output>
+                <br/> <br/>
+                <output>Gran Total de liquidación: ${this.state.granTotal} </output>
+                <br/> <br/>
+              </div>
             </div>
         );
     }
 }
+
 export default CalcT;

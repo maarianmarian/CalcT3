@@ -1,4 +1,4 @@
-import dignas from '../img/dignas.jpg';
+import dignas from '../img/Dignas.jpg';
 import React, {Component} from 'react';
 
 
@@ -7,8 +7,7 @@ import React, {Component} from 'react';
 class Agui extends Component {
     fecha1 = React.createRef();
     fecha2 = React.createRef();
-    fechaResult = React.createRef();
-    fechaResult = "sin resultado";
+    fechaRes = React.createRef();
     sueldoRef = React.createRef();
     aniosRef = React.createRef();
     diasRef = React.createRef();
@@ -23,6 +22,8 @@ class Agui extends Component {
         vacaciones: "",
         sueldoDiario:"",
         corresp:"",
+        aguinaldo: "",
+
 
     }
 
@@ -80,6 +81,7 @@ class Agui extends Component {
         let RestaFechas = 0;
         let antig = 0;
         let corresp = 0;
+        let aguinaldo = 0;
 
 
 
@@ -95,8 +97,10 @@ class Agui extends Component {
 //DEFINIENDO CORRESPONDIENTE
 
 
-            corresp = (((sueldoDiario * 15 ) / 365)* RestaFechas).toFixed(2);
+            corresp = (((sueldoDiario * 15 ) / 365) * RestaFechas).toFixed(2);
             console.log('CORRESPONDIENTE: ' + corresp);
+
+            aguinaldo = ((sueldoDiario) * 15).toFixed(2);
 
             this.setState({
                 fechaRes: RestaFechas,
@@ -105,7 +109,8 @@ class Agui extends Component {
                 antiguedad: antig,
                 vacaciones: vacaciones,
                 correspondiente: corresp,
-                anios: this.aniosRef
+                anios: this.aniosRef,
+                aguinaldo: aguinaldo,
             });
         }
 
@@ -117,6 +122,7 @@ class Agui extends Component {
         console.log('Años Antigüedad' + this.state.anios);
         console.log('Días Antigüedad' + this.state.fechaRes);
         console.log('corresp' + this.state.corresp);
+        console.log('aguinaldo' + this.state.aguinaldo);
 
     }
 
@@ -135,32 +141,40 @@ class Agui extends Component {
                 <div className="center">
 
 
-                    <div id="sidebar" className="archivosAdminCenter3">
-                        <div>
-                            <img src={dignas}/>
-                        </div>
-                        <h1>Dignas</h1>
-                        <h2>Aguinaldo</h2>
-                        <label>Sueldo semanal</label><br/>
-                        <input type="number" ref={this.sueldoRef} onChange={this.changeState}></input><br/><br/>
-                        <label>Fecha de ingreso </label><br/>
-                        <input type="date" ref={this.fecha1} onChange={this.changeState}></input><br/><br/>
-                        <label>Fecha de salida </label><br/>
-                        <input type="date" ref={this.fecha2} onChange={this.changeState}></input><br/><br/>
-                        <button className="btn" id="btn-table" onClick={this.calcular}>Calcular</button>
-                        <br/><br/>
-                        <output>Años de antigüedad: {this.state.anios} </output>
-                        <br/> <br/>
-                        <output>Días transcurridos del año en curso: {this.state.fechaRes} </output>
-                        <br/> <br/>
-                        <output>Correspondiente: ${this.state.correspondiente} </output>
-                        <br/> <br/>
-
-
+                  <div id="sidebar" className="archivosAdminCenter3">
+                    <div>
+                      <img src={dignas} alt="logo"/>
                     </div>
+                    <h1>Dignas</h1>
+                    <h2>Aguinaldo</h2>
+                    <label>Sueldo semanal</label><br/>
+                    <input type="number" ref={this.sueldoRef} onChange={this.changeState}></input><br/><br/>
+                    <label>Fecha de ingreso </label><br/>
+                    <input type="date" ref={this.fecha1} onChange={this.changeState}></input><br/><br/>
+                    <label>Fecha de salida </label><br/>
+                    <input type="date" ref={this.fecha2} onChange={this.changeState}></input><br/><br/>
+                    <button className="btn" id="btn-table" onClick={this.calcular}>Calcular</button>
+                    <br/><br/>
+                    <output><b>El cálculo de las prestaciones de las personas trabajadoras del hogar, se realizará con base
+                      al
+                      salario percibido por cada una.</b>
+                    </output>
+                    <br/> <br/>
+                    <output>Años de antigüedad: {this.state.anios} </output>
+                    <br/> <br/>
+                    <output>Días transcurridos del año en curso: {this.state.fechaRes} días</output>
+                    <br/> <br/>
+                    <output>Aguinaldo: ${this.state.aguinaldo} </output>
+                    <br/> <br/>
+                    <output>Parte proporcional del aguinaldo: ${this.state.correspondiente} </output>
+                    <br/> <br/>
+
+
+                  </div>
                 </div>
             </>
         );
     }
 }
+
 export default Agui;
