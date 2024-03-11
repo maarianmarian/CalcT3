@@ -28,6 +28,10 @@ body{
     font-size: 25px;
 }
 
+
+/*cajita
+
+ */
 #sidebar{
 
     width: 40%;
@@ -49,7 +53,7 @@ body{
 
 #sidebar.archivosAdminCenter{
 
-    float: center;
+    float: none;
     margin-top: -380px;
     margin-left: 550px;
     min-height: 550px;
@@ -60,7 +64,7 @@ body{
 
 #sidebar.archivosAdminCenter3{
 
-    float: center;
+    float: none;
     margin-left: auto;
     margin-right: auto;
     min-height: 350px;
@@ -85,7 +89,7 @@ body{
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    float: center;
+    float: none;
 }
 
 
@@ -100,7 +104,7 @@ body{
 
 .btn:hover{
     background: #2a0046;
-    color: white;
+    color: #138153;
 }
 
 
@@ -114,8 +118,10 @@ body{
     padding-left: 15px;
     text-align: left;
     background: #6b00b3;
-    max-width: 2100px; bottom: 1px solid #000000;
-    min-width: 2000px;
+    max-width: 200px;
+    bottom: 1px;
+    solid: #000000;
+    min-width: 1300px;
     max-height: 10px;
 
 
@@ -124,16 +130,39 @@ body{
     text-decoration: none;
     padding: 6px;
     margin-right: 10px;
-    float: center;
+    float: none;
     color: #138153;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 10px;
     box-shadow: none;
-    background-color: rgba(255, 255, 255, 0.842);
-    border: 0px;
-
+    background-color: #138153;
+    border: 100px;
 }
 .btn-navBar:hover{
     color: #2a0046;
     cursor: pointer;
+}
+
+
+hr {
+    border: 0; /* Elimina el borde superior por defecto */
+    border-top: 10px solid #138153; /* Añade una línea sólida de color gris claro */
+    width: 100%; /* Define el ancho de la línea */
+    margin: 0; /* Elimina los márgenes superior e inferior */
+}
+
+
+/*footer*/
+
+footer {
+    position: static; /* Posiciona el pie de página fijo en la parte inferior */
+    bottom: 5px; /* Ajusta el borde inferior del pie de página a la parte inferior de la página */
+    left: 0; /* Ajusta el borde izquierdo del pie de página al borde izquierdo de la página */
+    width: 100%; /* Define el ancho del pie de página */
+    background: lightgrey; /* Define el color de fondo del pie de página */
+    text-align: center; /* Centra el contenido del pie de página */
+    padding: 1px; /* Agrega espacio interior al pie de página */
+    color: #138153;
+    margin-bottom: 1%; /* Agrega un margen inferior de 10px al pie de página */
+
 }

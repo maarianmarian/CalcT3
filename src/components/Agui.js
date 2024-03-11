@@ -1,5 +1,6 @@
-import dignas from '../img/Dignas.jpg';
+import dignas from '../img/dignas.jpg';
 import React, {Component} from 'react';
+import whatsapp from "../img/whatsapp.png";
 
 
 
@@ -136,42 +137,55 @@ class Agui extends Component {
             <>
 
 
+              <div className="center">
 
 
-                <div className="center">
-
-
-                  <div id="sidebar" className="archivosAdminCenter3">
-                    <div>
-                      <img src={dignas} alt="logo"/>
-                    </div>
-                    <h1>Dignas</h1>
-                    <h2>Aguinaldo</h2>
-                    <label>Sueldo semanal</label><br/>
-                    <input type="number" ref={this.sueldoRef} onChange={this.changeState}></input><br/><br/>
-                    <label>Fecha de ingreso </label><br/>
-                    <input type="date" ref={this.fecha1} onChange={this.changeState}></input><br/><br/>
-                    <label>Fecha de salida </label><br/>
-                    <input type="date" ref={this.fecha2} onChange={this.changeState}></input><br/><br/>
-                    <button className="btn" id="btn-table" onClick={this.calcular}>Calcular</button>
-                    <br/><br/>
-                    <output><b>El cálculo de las prestaciones de las personas trabajadoras del hogar, se realizará con base
-                      al
-                      salario percibido por cada una.</b>
-                    </output>
-                    <br/> <br/>
-                    <output>Años de antigüedad: {this.state.anios} </output>
-                    <br/> <br/>
-                    <output>Días transcurridos del año en curso: {this.state.fechaRes} días</output>
-                    <br/> <br/>
-                    <output>Aguinaldo: ${this.state.aguinaldo} </output>
-                    <br/> <br/>
-                    <output>Parte proporcional del aguinaldo: ${this.state.correspondiente} </output>
-                    <br/> <br/>
-
-
+                <div id="sidebar" className="archivosAdminCenter3">
+                  <div>
+                    <img src={dignas} alt="logo"/>
                   </div>
+                  <h1>Dignas</h1>
+                  <h2>Aguinaldo</h2>
+                  <label>Sueldo semanal</label><br/>
+                  <input type="number" ref={this.sueldoRef} onChange={this.changeState}></input><br/><br/>
+                  <label>Fecha de ingreso </label><br/>
+                  <input type="date" ref={this.fecha1} onChange={this.changeState}></input><br/><br/>
+                  <label>Fecha de salida </label><br/>
+                  <input type="date" ref={this.fecha2} onChange={this.changeState}></input><br/><br/>
+                  <button className="btn" id="btn-table" onClick={this.calcular}>Calcular</button>
+                  <br/><br/>
+                  <output><b>El cálculo de las prestaciones de las personas trabajadoras del hogar, se realizará con
+                    base
+                    al
+                    salario percibido por cada una.</b>
+                  </output>
+                  <br/> <br/>
+                  <output>Años de antigüedad: {this.state.anios} </output>
+                  <br/> <br/>
+                  <output>Días transcurridos del año en curso: {this.state.fechaRes} días</output>
+                  <br/> <br/>
+                  <output>Aguinaldo: ${this.state.aguinaldo} </output>
+                  <br/> <br/>
+                  <output>Parte proporcional del aguinaldo: ${this.state.correspondiente} </output>
+                  <br/> <br/>
+
+
                 </div>
+                <footer>
+                  *salvo error de carácter aritmético
+                  <br/>
+                  <h1_><b>¡Contáctanos!</b></h1_>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5510662703&text=Hola%2C%20las%20contacto%20desde%20app%20de%20Dignas">
+                    <img src={whatsapp}
+                         alt="icono-whatsapp"/>
+                  </a>
+
+                </footer>
+              </div>
             </>
         );
     }
