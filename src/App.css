@@ -9,13 +9,8 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -moz-font-feature-settings: initial;
     -webkit-font-feature-settings: normal;
-    background: rgba(47, 1, 1, 0.11);
+    background: rgba(47, 1, 1, 0.11);}
 
-
-}
-.center{
-    width: 100%;
-}
 
 .center .subheader{
     font-size: 35px;
@@ -123,8 +118,10 @@ body{
     solid: #000000;
     min-width: 1300px;
     max-height: 10px;
+}
 
-
+.full-width {
+    width: 100vw;
 }
 .btn-navBar{
     text-decoration: none;
@@ -142,6 +139,9 @@ body{
     color: #2a0046;
     cursor: pointer;
 }
+
+
+
 
 
 hr {
@@ -165,4 +165,17 @@ footer {
     color: #138153;
     margin-bottom: 1%; /* Agrega un margen inferior de 10px al pie de página */
 
+}
+
+
+/* Ajustes para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    #sidebar {
+        width: 100%; /* Establecer el ancho al 100% en dispositivos móviles */
+        margin: 0; /* Eliminar los márgenes para adaptarse mejor a dispositivos móviles */
+        margin-top: 20px; /* Ajustar el margen superior según sea necesario */
+        margin-bottom: 20px; /* Ajustar el margen inferior según sea necesario */
+        margin-left: auto; /* Centrar horizontalmente */
+        margin-right: auto; /* Centrar horizontalmente */
+    }
 }
